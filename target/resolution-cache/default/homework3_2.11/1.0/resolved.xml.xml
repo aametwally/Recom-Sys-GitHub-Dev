@@ -4,7 +4,7 @@
 		module="homework3_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20161027160946"
+		publication="20161031152957"
 	>
 		<description>
 		Homework3
@@ -34,5 +34,8 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.8" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-http-experimental_2.11" rev="2.0.1" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.4" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-json_2.11" rev="2.4.0-M1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
