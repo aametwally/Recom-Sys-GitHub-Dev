@@ -11,50 +11,36 @@ import scala.concurrent.{Await, Future}
 import akka.stream.ActorMaterializer
 import akka.util.ByteString
 import scala.concurrent.duration._
+import sys.process._
 
   object Main extends App {
 
     implicit val system = ActorSystem()
     implicit val materializer = ActorMaterializer()
 
-    val uri = "https://api.github.com/users/square/repos"
-          val urls = scala.io.Source.fromURL(uri).mkString
-        //println(urls)
-    val obj = Json.parse(urls)
-    println(obj)
-    var firstObj = obj(0);
-    var clone_url = firstObj.\("clone_url")
-    println(clone_url)
-//val responseFuture: Future[HttpResponse] =
-//Http().singleRequest(HttpRequest(uri = "http://akka.io"))
-//
-//    import system.dispatcher
-//
-//    val response = Await.result(responseFuture, 5.seconds)
-//
-//    response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String).foreach(println)
-//    println(response.getClass.getSimpleName)
-//
-//    val json = EntityUtils.
+    val responseFuture =
+      Http().singleRequest(HttpRequest(uri = "https://api.github.com/users/square/repos"))
+    //println(responseFuture)
+
+    import system.dispatcher
+
+    val response = Await.result(responseFuture, 5.seconds)
+
+    val p = response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
+    for(a<-p)
+      {
+        val obj = Json.parse(a)
+        println("hello" +obj)
+        var firstObj= obj(0)
+        var clone_url = firstObj.\("clone_url")
+        println("here  " +clone_url)
+
+      }
+    //    while(i<20) {
+    //      var firstObj = obj(i);
+    //      var lang = firstObj.\ ("language")
+    //      //println(lang)
+    //        i = i + 1
+  //}
   }
-
-
-  //val ans= Await.result(p,5.seconds)
-
-  //println("hello  " +p)
-
-  //println("type   " +p.getClass.getSimpleName)
-
-
-//      val uri = "https://api.github.com/users/square/repos"
-//      val urls = scala.io.Source.fromURL(uri).mkString
-//    //println(urls)
-//    val ur = urls.replace("[",""""")
-//    val u = ur.replace("]","")
-//      println(u)
-//     //Json.parse(u)
-//      val cloner = urls.split(",").toList
-//      println(cloner)
-//      val patt = "clone_url:"
-//    cloner.foreach(println)
 
