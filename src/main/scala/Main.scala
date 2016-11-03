@@ -24,40 +24,40 @@ object Main extends App {
   var searchPath= "https://api.github.com/legacy/repos/search/"+keyword+"?language="+lang
   println("searchPath=" + searchPath)
 
-  /// send akka http request to get list of projects with the specified language and keyword
-//  val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
+  // send akka http request to get list of projects with the specified language and keyword
+  val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
   import system.dispatcher
-//  val response = Await.result(responseFuture, Duration.Inf) // 5.seconds)
-//  val p = response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
-//  val projectsURL = scala.collection.mutable.MutableList[String]()
-//  var i =0;
-//  for(m<-p)
-//  {
-//    i+=1
-//    println(i)
-//    val obj = Json.parse(m)
-//    var tempstr : String = null
-//    var username : String = null
-//    var name : String = null
-//    for( a <- 0 to 5){
-//      username = obj.\("repositories")(a).\("username").toString()
-//      name = obj.\("repositories")(a).\("name").toString()
-//      username= username.replace("\"", "");
-//      name= name.replace("\"", "");
-//      tempstr="https://api.github.com/repos/"+username+"/"+name
-//      println(username)
-//      println(name)
-//      println("tempStr= " + tempstr)
-//      projectsURL+= "https://api.github.com/repos/"+username+"/"+name
-//    }
-//
-//
-//  }
+  val response = Await.result(responseFuture, Duration.Inf) // 5.seconds)
+  val p = response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
+  val projectsURL = scala.collection.mutable.MutableList[String]()
+  var i =0;
+  for(m<-p)
+  {
+    i+=1
+    println(i)
+    val obj = Json.parse(m)
+    var tempstr : String = null
+    var username : String = null
+    var name : String = null
+    for( a <- 0 to 5){
+      username = obj.\("repositories")(a).\("username").toString()
+      name = obj.\("repositories")(a).\("name").toString()
+      username= username.replace("\"", "");
+      name= name.replace("\"", "");
+      tempstr="https://api.github.com/repos/"+username+"/"+name
+      println(username)
+      println(name)
+      println("tempStr= " + tempstr)
+      projectsURL+= "https://api.github.com/repos/"+username+"/"+name
+    }
+
+
+  }
 
   println("finish the first http request")
 
-  val projectsURL = scala.collection.mutable.MutableList[String]()
-  projectsURL+="https://api.github.com/repos/HCBravoLab/MicrobiomeSC"
+//  val projectsURL = scala.collection.mutable.MutableList[String]()
+//  projectsURL+="https://api.github.com/repos/HCBravoLab/MicrobiomeSC"
 
   //TODO: (Bug) This part is processed before the wait time finish.
   val projectsCloneURL = scala.collection.mutable.MutableList[String]()
@@ -83,7 +83,7 @@ object Main extends App {
       cloneURLtmp = projectJS.\("clone_url").toString()
       cloneURLtmp = cloneURLtmp.replace("\"", "");
       projectsCloneURL += cloneURLtmp
-      cloneGitHubStr="git clone " + cloneURLtmp + "down/" + projectFullName
+      cloneGitHubStr="git clone " + cloneURLtmp + " repo_projects/" + projectFullName
 
       println("cloneURLtmp="+cloneURLtmp)
       println("projectFullName=" + projectFullName)
