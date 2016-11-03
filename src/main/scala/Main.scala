@@ -25,39 +25,39 @@ object Main extends App {
   println("searchPath=" + searchPath)
 
   // send akka http request to get list of projects with the specified language and keyword
-  val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
+//  val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
   import system.dispatcher
-  val response = Await.result(responseFuture, Duration.Inf) // 5.seconds)
-  val p = response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
-  val projectsURL = scala.collection.mutable.MutableList[String]()
-  var i =0;
-  for(m<-p)
-  {
-    i+=1
-    println(i)
-    val obj = Json.parse(m)
-    var tempstr : String = null
-    var username : String = null
-    var name : String = null
-    for( a <- 0 to 5){
-      username = obj.\("repositories")(a).\("username").toString()
-      name = obj.\("repositories")(a).\("name").toString()
-      username= username.replace("\"", "");
-      name= name.replace("\"", "");
-      tempstr="https://api.github.com/repos/"+username+"/"+name
-      println(username)
-      println(name)
-      println("tempStr= " + tempstr)
-      projectsURL+= "https://api.github.com/repos/"+username+"/"+name
-    }
-
-
-  }
-
-  println("finish the first http request")
-
+//  val response = Await.result(responseFuture, Duration.Inf) // 5.seconds)
+//  val p = response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
 //  val projectsURL = scala.collection.mutable.MutableList[String]()
-//  projectsURL+="https://api.github.com/repos/HCBravoLab/MicrobiomeSC"
+//  var i =0;
+//  for(m<-p)
+//  {
+//    i+=1
+//    println(i)
+//    val obj = Json.parse(m)
+//    var tempstr : String = null
+//    var username : String = null
+//    var name : String = null
+//    for( a <- 0 to 5){
+//      username = obj.\("repositories")(a).\("username").toString()
+//      name = obj.\("repositories")(a).\("name").toString()
+//      username= username.replace("\"", "");
+//      name= name.replace("\"", "");
+//      tempstr="https://api.github.com/repos/"+username+"/"+name
+//      println(username)
+//      println(name)
+//      println("tempStr= " + tempstr)
+//      projectsURL+= "https://api.github.com/repos/"+username+"/"+name
+//    }
+//
+//
+//  }
+//
+//  println("finish the first http request")
+
+  val projectsURL = scala.collection.mutable.MutableList[String]()
+  projectsURL+="https://api.github.com/repos/HCBravoLab/MicrobiomeSC"
 
   //TODO: (Bug) This part is processed before the wait time finish.
   val projectsCloneURL = scala.collection.mutable.MutableList[String]()
@@ -72,7 +72,7 @@ object Main extends App {
     println("here is the for= " +path )
 
     val responseFuture2 = Http().singleRequest(HttpRequest(uri = path))
-    val response2 = Await.result(responseFuture2, 5.seconds)
+    val response2 = Await.result(responseFuture2, Duration.Inf)
     val p2 = response2.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
     //var projectFullName
     for(m2<-p2)
