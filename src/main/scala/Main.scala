@@ -24,7 +24,7 @@ object Main extends App {
   var searchPath= "https://api.github.com/legacy/repos/search/"+keyword+"?language="+lang
   println("searchPath=" + searchPath)
 
-  /// send akka http request to get list of projects with the specified language and keyword
+  // send akka http request to get list of projects with the specified language and keyword
 //  val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
   import system.dispatcher
 //  val response = Await.result(responseFuture, Duration.Inf) // 5.seconds)
@@ -53,8 +53,8 @@ object Main extends App {
 //
 //
 //  }
-
-  println("finish the first http request")
+//
+//  println("finish the first http request")
 
   val projectsURL = scala.collection.mutable.MutableList[String]()
   projectsURL+="https://api.github.com/repos/HCBravoLab/MicrobiomeSC"
@@ -72,7 +72,7 @@ object Main extends App {
     println("here is the for= " +path )
 
     val responseFuture2 = Http().singleRequest(HttpRequest(uri = path))
-    val response2 = Await.result(responseFuture2, 5.seconds)
+    val response2 = Await.result(responseFuture2, Duration.Inf)
     val p2 = response2.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
     //var projectFullName
     for(m2<-p2)
@@ -83,7 +83,7 @@ object Main extends App {
       cloneURLtmp = projectJS.\("clone_url").toString()
       cloneURLtmp = cloneURLtmp.replace("\"", "");
       projectsCloneURL += cloneURLtmp
-      cloneGitHubStr="git clone " + cloneURLtmp + "down/" + projectFullName
+      cloneGitHubStr="git clone " + cloneURLtmp + " repo_projects/" + projectFullName
 
       println("cloneURLtmp="+cloneURLtmp)
       println("projectFullName=" + projectFullName)
