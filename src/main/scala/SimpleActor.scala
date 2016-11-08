@@ -1,4 +1,5 @@
-import akka.actor.{Actor, ActorSystem}
+import DatabaseActor.ComparisonActor
+import akka.actor.{Actor, ActorSystem, Props}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.HttpRequest
 import akka.stream.ActorMaterializer
@@ -21,6 +22,7 @@ object SimpleActor extends App{
         import system.dispatcher
         println("String : " + projectsURL)
         implicit val system = ActorSystem("SimpleActor")
+        val actors = system.actorOf(Props[ComparisonActor], "ComparisonActor")
         val projectsCloneURL = scala.collection.mutable.MutableList[String]()
         val projectsURLs = scala.collection.mutable.MutableList[String]()
         projectsURLs += projectsURL
@@ -50,13 +52,17 @@ object SimpleActor extends App{
             cloneURLtmp = cloneURLtmp.replace("\"", "");
             projectsCloneURL += cloneURLtmp
             cloneGitHubStr="git clone " + cloneURLtmp + " repo_projects/" + projectFullName
-
+            var repostring = "repo_projects/" + projectFullName
             println("cloneURLtmp="+cloneURLtmp)
             println("projectFullName=" + projectFullName)
             println("Clone command = " + cloneGitHubStr)
+            //println("Repo location = " +repostring)
 
+            val yy =  cloneGitHubStr !!;
 
-            val yy =  cloneGitHubStr !
+            println("I am here now")
+            actors ! repostring
+
 
           }
           println("Done")
