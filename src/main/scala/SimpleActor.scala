@@ -50,15 +50,43 @@ object SimpleActor extends App{
             projectFullName = projectFullName.replace("\"", "");
             cloneURLtmp = projectJS.\("clone_url").toString()
             cloneURLtmp = cloneURLtmp.replace("\"", "");
+            var tag_url = projectJS.\("tags_url").toString().replace("\"", "");
+            val responseFuture3 = Http().singleRequest(HttpRequest(uri = tag_url))
+            val response3 = Await.result(responseFuture2, Duration.Inf)
+            response3.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String).foreach(println)
             projectsCloneURL += cloneURLtmp
             cloneGitHubStr="git clone " + cloneURLtmp + " repo_projects/" + projectFullName
-            var repostring = "repo_projects/" + projectFullName
+            var repostring = "//repo_projects/" + projectFullName
             println("cloneURLtmp="+cloneURLtmp)
             println("projectFullName=" + projectFullName)
             println("Clone command = " + cloneGitHubStr)
-            //println("Repo location = " +repostring)
+            println("Repo location = " +repostring)
 
             val yy =  cloneGitHubStr !!;
+            var urlss = scala.io.Source.fromURL(tag_url).mkString
+            var obj = Json.parse(urlss)
+            val projectVersion = scala.collection.mutable.MutableList[String]()
+
+            // Extract the older version of the product
+            var firstObj = obj(1);
+            var tag = firstObj.\("commit").\("sha").toString().replace("\"", "");
+            println(tag)
+
+//            for(c <- projectVersion)
+//              Add a comment to this line
+//                {
+//                  println(c)
+//                }
+
+            println("Finish getting the versions")
+
+            val Array(n1, n2, _*) = projectFullName.split("/")
+            var v2Name :  String = "repo_projects/" + projectFullName + "_v2"
+            println("v2name= " + v2Name)
+            var newVersion=   Process(Seq("mkdir", v2Name))!!; //"mkdir $v2Name"!!
+          var checkoutCommand =  "git --git-dir=repo_projects/" + projectFullName + "/.git --work-tree=" + v2Name + " checkout " + tag + " -- ."
+            println("version command = " + checkoutCommand)
+            var tt = checkoutCommand!!
 
             println("I am here now")
             actors ! repostring

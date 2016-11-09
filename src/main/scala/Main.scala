@@ -19,46 +19,47 @@ object Main extends App{
     implicit val materializer = ActorMaterializer()
 
     /// User specify the language and the keyword
-    val lang = scala.io.StdIn.readLine("Enter the Language > ")
-    println("Language= " + lang)
-    val keyword = scala.io.StdIn.readLine("Enter the keyword of the project > ")
-    println("keyword= " + keyword)
-    var searchPath = "https://api.github.com/legacy/repos/search/" + keyword + "?language=" + lang
-    println("searchPath=" + searchPath)
+//    val lang = scala.io.StdIn.readLine("Enter the Language > ")
+//    println("Language= " + lang)
+//    val keyword = scala.io.StdIn.readLine("Enter the keyword of the project > ")
+//    println("keyword= " + keyword)
+//    var searchPath = "https://api.github.com/legacy/repos/search/" + keyword + "?language=" + lang
+//    println("searchPath=" + searchPath)
+      var searchPath = "https://api.github.com/repos/square/okio"
   val actors = system.actorOf(Props[ComplexActor], "ComplexActor")
     // send akka http request to get list of projects with the specified language and keyword
-      val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
-    import system.dispatcher
+//      val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
+//    import system.dispatcher
+//
+//      val response = Await.result(responseFuture, Duration.Inf) // 5.seconds)
+//      val p = response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
+//      //val projectsURL = scala.collection.mutable.MutableList[String]()
+//      var i =0;
+//      for(m<-p)
+//      {
+//        i+=1
+//        println(i)
+//        val obj = Json.parse(m)
+//        var tempstr : String = null
+//        var username : String = null
+//        var name : String = null
+//        for( a <- 0 to 5){
+//          username = obj.\("repositories")(a).\("username").toString()
+//          name = obj.\("repositories")(a).\("name").toString()
+//          username= username.replace("\"", "");
+//          name= name.replace("\"", "");
+//          tempstr="https://api.github.com/repos/"+username+"/"+name
+//          println(username)
+//          println(name)
+//          println("tempStr= " + tempstr)
+//          val projectsURL= "https://api.github.com/repos/"+username+"/"+name
+          actors ! searchPath
+//        }
 
-      val response = Await.result(responseFuture, Duration.Inf) // 5.seconds)
-      val p = response.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
-      //val projectsURL = scala.collection.mutable.MutableList[String]()
-      var i =0;
-      for(m<-p)
-      {
-        i+=1
-        println(i)
-        val obj = Json.parse(m)
-        var tempstr : String = null
-        var username : String = null
-        var name : String = null
-        for( a <- 0 to 5){
-          username = obj.\("repositories")(a).\("username").toString()
-          name = obj.\("repositories")(a).\("name").toString()
-          username= username.replace("\"", "");
-          name= name.replace("\"", "");
-          tempstr="https://api.github.com/repos/"+username+"/"+name
-          //println(username)
-          //println(name)
-          //println("tempStr= " + tempstr)
-          val projectsURL= "https://api.github.com/repos/"+username+"/"+name
-          actors ! projectsURL
-        }
 
+//      }
 
-      }
-
-      //println("finish the first http request")
+      println("finish the first http request")
 
     //val projectsURL = scala.collection.mutable.MutableList[String]()
    // projectsURL += "https://api.github.com/repos/HCBravoLab/MicrobiomeSC"
@@ -100,6 +101,6 @@ object Main extends App{
 //    projectsCloneURL.foreach {
 //      println
 //    }
-    println("finished")
+    println("finish")
   }
 
