@@ -17,6 +17,8 @@ object SimpleActor extends App{
 
   class ComplexActor extends Actor{
     implicit val materializer = ActorMaterializer()
+    implicit val system = ActorSystem("SimpleActor")
+    val actors = system.actorOf(Props[ComparisonActor], "ComparisonActor")
     def receive = {
       case projectsURL: String => {
         import system.dispatcher
@@ -30,19 +32,10 @@ object SimpleActor extends App{
         var projectFullName : String = null
         var cloneGitHubStr : String = null
         var j=0
-        //println("here  " +projectsURL)
-        //println("another " +projectsURLs)
         for (path <- projectsURLs) {
-          //println("I am here " + path)
-
-          //          j+=1
-          //          println("j= "+j)
-          //          println("here is the for= " +path )
-          //
           val responseFuture2 = Http().singleRequest(HttpRequest(uri = path))
           val response2 = Await.result(responseFuture2, Duration.Inf)
           val p2 = response2.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
-          //var projectFullName
           for(m2<-p2)
           {
             val projectJS = Json.parse(m2)
@@ -51,48 +44,22 @@ object SimpleActor extends App{
             cloneURLtmp = projectJS.\("clone_url").toString()
             cloneURLtmp = cloneURLtmp.replace("\"", "");
             var tag_url = projectJS.\("tags_url").toString().replace("\"", "");
+            println("tags  " + tag_url)
             val responseFuture3 = Http().singleRequest(HttpRequest(uri = tag_url))
-            val response3 = Await.result(responseFuture2, Duration.Inf)
-            response3.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String).foreach(println)
+            val response3 = Await.result(responseFuture3, Duration.Inf)
+            val temptag = response3.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String)
+            for(s<-temptag)
+              {
+                val jtemp = Json.parse(s)
+                val tempstr = s.toString.length
+                println(" sammy " + tempstr)
+              }
+            //if(temptag.toString.length>0) println("Tags exist   " + temptag.toString.length)
             projectsCloneURL += cloneURLtmp
             cloneGitHubStr="git clone " + cloneURLtmp + " repo_projects/" + projectFullName
             val Array(n1, n2, _*) = projectFullName.split("/")
             var repostring = "repo_projects/" + n1
-            println("cloneURLtmp="+cloneURLtmp)
-            println("projectFullName=" + projectFullName)
-            println("Clone command = " + cloneGitHubStr)
-            println("Repo location = " +repostring)
-
-            val yy =  cloneGitHubStr !!;
-            var urlss = scala.io.Source.fromURL(tag_url).mkString
-            var obj = Json.parse(urlss)
-            val projectVersion = scala.collection.mutable.MutableList[String]()
-
-            // Extract the older version of the product
-            var firstObj = obj(1);
-            var tag = firstObj.\("commit").\("sha").toString().replace("\"", "");
-            println(tag)
-
-//            for(c <- projectVersion)
-//              Add a comment to this line
-//                {
-//                  println(c)
-//                }
-
-            println("Finish getting the versions")
-
-
-            var v2Name :  String = "repo_projects/" + projectFullName + "_v2"
-            println("v2name= " + v2Name)
-            var newVersion=   Process(Seq("mkdir", v2Name))!!; //"mkdir $v2Name"!!
-          var checkoutCommand =  "git --git-dir=repo_projects/" + projectFullName + "/.git --work-tree=" + v2Name + " checkout " + tag + " -- ."
-            println("version command = " + checkoutCommand)
-            var tt = checkoutCommand!!
-
-            println("I am here now")
-            actors ! repostring
-
-
+            parsing(repostring, cloneURLtmp, projectFullName, cloneGitHubStr, tag_url)
           }
           println("Done")
         }
@@ -103,6 +70,34 @@ object SimpleActor extends App{
       }
       case i:Int => println("Integer : " +i)
 
+    }
+    def parsing(repostring: String, cloneURLtmp: String, projectFullName: String, cloneGitHubStr: String, tag_url: String ) = {
+      println("cloneURLtmp="+cloneURLtmp)
+      println("projectFullName=" + projectFullName)
+      println("Clone command = " + cloneGitHubStr)
+      println("Repo location = " +repostring)
+
+      val yy =  cloneGitHubStr !!;
+      var urlss = scala.io.Source.fromURL(tag_url).mkString
+      var obj = Json.parse(urlss)
+      val projectVersion = scala.collection.mutable.MutableList[String]()
+
+      // Extract the older version of the product
+      var firstObj = obj(1);
+      var tag = firstObj.\("commit").\("sha").toString().replace("\"", "");
+      println(tag)
+      println("Finish getting the versions")
+
+
+      var v2Name :  String = "repo_projects/" + projectFullName + "_v2"
+      println("v2name= " + v2Name)
+      var newVersion=   Process(Seq("mkdir", v2Name))!!; //"mkdir $v2Name"!!
+      var checkoutCommand =  "git --git-dir=repo_projects/" + projectFullName + "/.git --work-tree=" + v2Name + " checkout " + tag + " -- ."
+      println("version command = " + checkoutCommand)
+      var tt = checkoutCommand!!
+
+      println("I am here now")
+      actors ! repostring
     }
     def foo = println("Normal method")
   }
