@@ -11,12 +11,14 @@ This project aims at making recommendations to GitHub developers based on the di
 ## Inputs:
 
 * The language for your test projects (Example: java)
-* A keyword to search for (Example: "dna" as the keyword will look for all projects within the github repository with the word "dna" in it's name)
+* A keyword to search for (Example: "square" as the keyword will look for all projects within the github repository with the word "square" in it's name)
 
 ## Output:
 
-List of methods with changes between the versions which could be re-tested by the users
+* List of all methods that added to the new version.
+* List of all the methods that removed from the old version.
 
+These methods are the one that should be tested.
 
 
 ## Getting Started
@@ -25,8 +27,6 @@ List of methods with changes between the versions which could be re-tested by th
 * JDK 8 and JRE 8 to be installed on the machine.
 * SBT to be installed on the machine.
 * Understand® installed on the machine.
-
-
 
 
 ### Installing, Testing, and Running
@@ -75,18 +75,18 @@ sbt "test-only "
 
 To execute the program from command line, use:
 ```
-sbt run
+sbt run Main
 ```
 
 
 Then the program should ask you to enter a language of your choice and a keyword to help narrow down the search for applications from github.
 ```
-* java
-* dna
+* Enter the language: java
+* Enter the keyword: dna
 ```
 
 
-The program should then use the keyword and language preferences to clone the repositories matching the language and keyword descriptions into the local repository, build dependency graphs and calculate the differences between different versions of the application based on the dependency graphs. 
+The program should then use the keyword and language preferences to clone the repositories matching the language and keyword descriptions into the local repository, build dependency graphs and calculate the differences between different versions of the application based on the dependency graphs.  
 
 
 ### Implementation Notes:
@@ -95,12 +95,3 @@ The program should then use the keyword and language preferences to clone the re
 * We use GitHub developer APIs to clone two versions of the same application into our local machine.
 * We then use Understand APIs to build the udb files from which to build dependency graphs on a function level.
 * The dependency graphs of the different versions are then compared to obtain the differences between the versions which are given out as a recommendation to the developers so they may test the functions that have been added since the previous version of the application.
-
-
-
-
-
-
-
-
-
