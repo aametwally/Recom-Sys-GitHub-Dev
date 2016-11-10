@@ -56,7 +56,8 @@ object SimpleActor extends App{
             response3.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String).foreach(println)
             projectsCloneURL += cloneURLtmp
             cloneGitHubStr="git clone " + cloneURLtmp + " repo_projects/" + projectFullName
-            var repostring = "repo_projects/" + projectFullName
+            val Array(n1, n2, _*) = projectFullName.split("/")
+            var repostring = "repo_projects/" + n1
             println("cloneURLtmp="+cloneURLtmp)
             println("projectFullName=" + projectFullName)
             println("Clone command = " + cloneGitHubStr)
@@ -80,7 +81,7 @@ object SimpleActor extends App{
 
             println("Finish getting the versions")
 
-            val Array(n1, n2, _*) = projectFullName.split("/")
+
             var v2Name :  String = "repo_projects/" + projectFullName + "_v2"
             println("v2name= " + v2Name)
             var newVersion=   Process(Seq("mkdir", v2Name))!!; //"mkdir $v2Name"!!

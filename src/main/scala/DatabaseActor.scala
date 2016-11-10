@@ -27,13 +27,13 @@ object DatabaseActor extends App {
         val test_java_file_path = repoString
         // make generic (java for now)
         val test_java_file_extension = "java"
-        val und_path = "/Applications/Understand.app/Contents/MacOS/und"
+        val und_path = "/home/hady/Dropbox/UIC/Courses/CS-474-OOP/HW2/scitools/bin/linux64/und "
         val list_of_version_subfolders = new File(test_java_file_path).listFiles.filter(_.isDirectory).map(_.getName)
         list_of_version_subfolders.foreach {
           sub_folder =>
             val temp_write_file = new PrintWriter(new File("CurrentProjectJavaList.txt"))
             // Some of this code was used in hw1 (this contains scala equivalent of that code) (Eric Wolfson)
-            Files.walk(Paths.get(test_java_file_path + "\\" + sub_folder)).forEach(new Consumer[Path] {
+            Files.walk(Paths.get(test_java_file_path + "/" + sub_folder)).forEach(new Consumer[Path] {
               def accept(pth: Path) =
                 if (Files.isRegularFile(pth)) {
                   if (pth.toString().substring(pth.toString().lastIndexOf('.') + 1).equals(test_java_file_extension)) {
@@ -56,7 +56,7 @@ object DatabaseActor extends App {
 
         val versionnames: Array[String] = list_of_version_subfolders
 
-        if (versionnames(0).substring(versionnames(0).length-2).equals("_2"))
+        if (versionnames(0).substring(versionnames(0).length-3).equals("_v2"))
         {
           index_for_old = 0
         }
@@ -158,4 +158,3 @@ object DatabaseActor extends App {
   }
 
 }
-
