@@ -56,7 +56,7 @@ object SimpleActor extends App{
             response3.entity.dataBytes.runFold(ByteString.empty)(_ ++ _).map(_.utf8String).foreach(println)
             projectsCloneURL += cloneURLtmp
             cloneGitHubStr="git clone " + cloneURLtmp + " repo_projects/" + projectFullName
-            var repostring = "//repo_projects/" + projectFullName
+            var repostring = "repo_projects/" + projectFullName
             println("cloneURLtmp="+cloneURLtmp)
             println("projectFullName=" + projectFullName)
             println("Clone command = " + cloneGitHubStr)

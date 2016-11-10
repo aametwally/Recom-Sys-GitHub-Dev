@@ -7,38 +7,38 @@
 		revision="1.0"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20161031201126"/>
+		date="20161109180340"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-json_2.11">
-			<revision name="2.4.0-M1" status="release" pubdate="20140820215300" resolver="jcenter" artresolver="jcenter" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="11">
+			<revision name="2.4.0-M1" status="release" pubdate="20140820215300" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="11">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="6413" time="387" location="/home/hady/.ivy2/cache/com.typesafe.play/play-json_2.11/ivy-2.4.0-M1.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/com.typesafe.play/play-json_2.11/ivy-2.4.0-M1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-json_2.11/2.4.0-M1/play-json_2.11-2.4.0-M1.pom"/>
+				<metadata-artifact status="no" details="" size="4407" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-json_2.11/ivy-2.4.0-M1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-json_2.11/2.4.0-M1/play-json_2.11-2.4.0-M1.pom"/>
 				<caller organisation="homework3" name="homework3_2.11" conf="compile" rev="2.4.0-M1" rev-constraint-default="2.4.0-M1" rev-constraint-dynamic="2.4.0-M1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="play-json_2.11" type="jar" ext="jar" status="successful" details="" size="522257" time="2847" location="/home/hady/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.0-M1.jar">
+					<artifact name="play-json_2.11" type="jar" ext="jar" status="no" details="" size="522257" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.4.0-M1.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/play/play-json_2.11/2.4.0-M1/play-json_2.11-2.4.0-M1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.fasterxml.jackson.core" name="jackson-databind">
-			<revision name="2.3.2" status="release" pubdate="20140301211300" resolver="jcenter" artresolver="jcenter" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
-				<metadata-artifact status="successful" details="" size="5928" time="366" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/ivy-2.3.2.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/ivy-2.3.2.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-databind/2.3.2/jackson-databind-2.3.2.pom"/>
+			<revision name="2.3.2" status="release" pubdate="20140301211300" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
+				<metadata-artifact status="no" details="" size="7259" time="0" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/ivy-2.3.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-databind/2.3.2/jackson-databind-2.3.2.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="jackson-databind" type="bundle" ext="jar" status="successful" details="" size="915096" time="1015" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.3.2.jar">
+					<artifact name="jackson-databind" type="bundle" ext="jar" status="no" details="" size="915096" time="0" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.3.2.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-databind/2.3.2/jackson-databind-2.3.2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.fasterxml.jackson.core" name="jackson-annotations">
-			<revision name="2.3.2" status="release" pubdate="20140228193500" resolver="jcenter" artresolver="jcenter" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
-				<metadata-artifact status="successful" details="" size="1706" time="403" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/ivy-2.3.2.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/ivy-2.3.2.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-annotations/2.3.2/jackson-annotations-2.3.2.pom"/>
+			<revision name="2.3.2" status="release" pubdate="20140228193500" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
+				<metadata-artifact status="no" details="" size="4859" time="0" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/ivy-2.3.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-annotations/2.3.2/jackson-annotations-2.3.2.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.4.0-M1"/>
 				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.3.0" rev-constraint-default="2.3.0" rev-constraint-dynamic="2.3.0" callerrev="2.3.2"/>
 				<artifacts>
-					<artifact name="jackson-annotations" type="bundle" ext="jar" status="successful" details="" size="36521" time="672" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.3.2.jar">
+					<artifact name="jackson-annotations" type="bundle" ext="jar" status="no" details="" size="36521" time="0" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.3.2.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-annotations/2.3.2/jackson-annotations-2.3.2.jar"/>
 					</artifact>
 				</artifacts>
@@ -51,96 +51,96 @@
 			</revision>
 		</module>
 		<module organisation="com.fasterxml.jackson.core" name="jackson-core">
-			<revision name="2.3.2" status="release" pubdate="20140228193800" resolver="jcenter" artresolver="jcenter" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
-				<metadata-artifact status="successful" details="" size="5965" time="391" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/ivy-2.3.2.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/ivy-2.3.2.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-core/2.3.2/jackson-core-2.3.2.pom"/>
+			<revision name="2.3.2" status="release" pubdate="20140228193800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonHome" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
+				<metadata-artifact status="no" details="" size="5479" time="0" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/ivy-2.3.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-core/2.3.2/jackson-core-2.3.2.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.4.0-M1"/>
 				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="2.3.2"/>
 				<artifacts>
-					<artifact name="jackson-core" type="bundle" ext="jar" status="successful" details="" size="199553" time="921" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.3.2.jar">
+					<artifact name="jackson-core" type="bundle" ext="jar" status="no" details="" size="199553" time="0" location="/home/hady/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.3.2.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-core/2.3.2/jackson-core-2.3.2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.11.1" status="release" pubdate="20140520030200" resolver="jcenter" artresolver="jcenter" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
+			<revision name="2.11.1" status="release" pubdate="20140520030200" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="1568" time="369" location="/home/hady/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.pom"/>
+				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/hady/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="successful" details="" size="4372892" time="1678" location="/home/hady/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.1.jar">
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4372892" time="0" location="/home/hady/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.1.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.joda" name="joda-convert">
-			<revision name="1.6" status="release" pubdate="20140127123700" resolver="jcenter" artresolver="jcenter" homepage="http://www.joda.org/joda-convert/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
+			<revision name="1.6" status="release" pubdate="20140127123700" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="20406" time="643" location="/home/hady/.ivy2/cache/org.joda/joda-convert/ivy-1.6.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/org.joda/joda-convert/ivy-1.6.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/joda/joda-convert/1.6/joda-convert-1.6.pom"/>
+				<metadata-artifact status="no" details="" size="6122" time="0" location="/home/hady/.ivy2/cache/org.joda/joda-convert/ivy-1.6.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/joda/joda-convert/1.6/joda-convert-1.6.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="1.6" rev-constraint-default="1.6" rev-constraint-dynamic="1.6" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="joda-convert" type="jar" ext="jar" status="successful" details="" size="98818" time="655" location="/home/hady/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.6.jar">
+					<artifact name="joda-convert" type="jar" ext="jar" status="no" details="" size="98818" time="0" location="/home/hady/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.6.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/joda/joda-convert/1.6/joda-convert-1.6.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="joda-time" name="joda-time">
-			<revision name="2.3" status="release" pubdate="20130816123100" resolver="jcenter" artresolver="jcenter" homepage="http://www.joda.org/joda-time/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
+			<revision name="2.3" status="release" pubdate="20130816123100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="25165" time="471" location="/home/hady/.ivy2/cache/joda-time/joda-time/ivy-2.3.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/joda-time/joda-time/ivy-2.3.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/joda-time/joda-time/2.3/joda-time-2.3.pom"/>
+				<metadata-artifact status="no" details="" size="6376" time="0" location="/home/hady/.ivy2/cache/joda-time/joda-time/ivy-2.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/joda-time/joda-time/2.3/joda-time-2.3.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.3" rev-constraint-default="2.3" rev-constraint-dynamic="2.3" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="joda-time" type="jar" ext="jar" status="successful" details="" size="581571" time="715" location="/home/hady/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.3.jar">
+					<artifact name="joda-time" type="jar" ext="jar" status="no" details="" size="581571" time="0" location="/home/hady/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.3.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/joda-time/joda-time/2.3/joda-time-2.3.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-datacommons_2.11">
-			<revision name="2.4.0-M1" status="release" pubdate="20140820215200" resolver="jcenter" artresolver="jcenter" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
+			<revision name="2.4.0-M1" status="release" pubdate="20140820215200" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3931" time="425" location="/home/hady/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/ivy-2.4.0-M1.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/ivy-2.4.0-M1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-datacommons_2.11/2.4.0-M1/play-datacommons_2.11-2.4.0-M1.pom"/>
+				<metadata-artifact status="no" details="" size="2548" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/ivy-2.4.0-M1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-datacommons_2.11/2.4.0-M1/play-datacommons_2.11-2.4.0-M1.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.4.0-M1" rev-constraint-default="2.4.0-M1" rev-constraint-dynamic="2.4.0-M1" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="play-datacommons_2.11" type="jar" ext="jar" status="successful" details="" size="5331" time="348" location="/home/hady/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.0-M1.jar">
+					<artifact name="play-datacommons_2.11" type="jar" ext="jar" status="no" details="" size="5331" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.4.0-M1.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/play/play-datacommons_2.11/2.4.0-M1/play-datacommons_2.11-2.4.0-M1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-functional_2.11">
-			<revision name="2.4.0-M1" status="release" pubdate="20140820215300" resolver="jcenter" artresolver="jcenter" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
+			<revision name="2.4.0-M1" status="release" pubdate="20140820215300" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3928" time="407" location="/home/hady/.ivy2/cache/com.typesafe.play/play-functional_2.11/ivy-2.4.0-M1.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/com.typesafe.play/play-functional_2.11/ivy-2.4.0-M1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-functional_2.11/2.4.0-M1/play-functional_2.11-2.4.0-M1.pom"/>
+				<metadata-artifact status="no" details="" size="2545" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-functional_2.11/ivy-2.4.0-M1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-functional_2.11/2.4.0-M1/play-functional_2.11-2.4.0-M1.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.4.0-M1" rev-constraint-default="2.4.0-M1" rev-constraint-dynamic="2.4.0-M1" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="play-functional_2.11" type="jar" ext="jar" status="successful" details="" size="373184" time="5730" location="/home/hady/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.0-M1.jar">
+					<artifact name="play-functional_2.11" type="jar" ext="jar" status="no" details="" size="373184" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.4.0-M1.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/play/play-functional_2.11/2.4.0-M1/play-functional_2.11-2.4.0-M1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-iteratees_2.11">
-			<revision name="2.4.0-M1" status="release" pubdate="20140820215300" resolver="jcenter" artresolver="jcenter" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="12">
+			<revision name="2.4.0-M1" status="release" pubdate="20140820215300" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="12">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="5114" time="334" location="/home/hady/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/ivy-2.4.0-M1.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/ivy-2.4.0-M1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-iteratees_2.11/2.4.0-M1/play-iteratees_2.11-2.4.0-M1.pom"/>
+				<metadata-artifact status="no" details="" size="3325" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/ivy-2.4.0-M1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/play/play-iteratees_2.11/2.4.0-M1/play-iteratees_2.11-2.4.0-M1.pom"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.11" conf="default, compile, runtime, master" rev="2.4.0-M1" rev-constraint-default="2.4.0-M1" rev-constraint-dynamic="2.4.0-M1" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="play-iteratees_2.11" type="jar" ext="jar" status="successful" details="" size="729957" time="3559" location="/home/hady/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.0-M1.jar">
+					<artifact name="play-iteratees_2.11" type="jar" ext="jar" status="no" details="" size="729957" time="0" location="/home/hady/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.4.0-M1.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/play/play-iteratees_2.11/2.4.0-M1/play-iteratees_2.11-2.4.0-M1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-stm" name="scala-stm_2.11">
-			<revision name="0.7" status="release" pubdate="20140417234400" resolver="jcenter" artresolver="jcenter" homepage="http://nbronson.github.com/scala-stm/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+			<revision name="0.7" status="release" pubdate="20140417234400" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://nbronson.github.com/scala-stm/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
 				<license name="BSD" url="https://github.com/nbronson/scala-stm/blob/master/LICENSE.txt"/>
-				<metadata-artifact status="successful" details="" size="1422" time="369" location="/home/hady/.ivy2/cache/org.scala-stm/scala-stm_2.11/ivy-0.7.xml" searched="true" original-local-location="/home/hady/.ivy2/cache/org.scala-stm/scala-stm_2.11/ivy-0.7.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-stm/scala-stm_2.11/0.7/scala-stm_2.11-0.7.pom"/>
+				<metadata-artifact status="no" details="" size="2537" time="0" location="/home/hady/.ivy2/cache/org.scala-stm/scala-stm_2.11/ivy-0.7.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-stm/scala-stm_2.11/0.7/scala-stm_2.11-0.7.pom"/>
 				<caller organisation="com.typesafe.play" name="play-iteratees_2.11" conf="compile, runtime" rev="0.7" rev-constraint-default="0.7" rev-constraint-dynamic="0.7" callerrev="2.4.0-M1"/>
 				<artifacts>
-					<artifact name="scala-stm_2.11" type="jar" ext="jar" status="successful" details="" size="630306" time="1141" location="/home/hady/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar">
+					<artifact name="scala-stm_2.11" type="jar" ext="jar" status="no" details="" size="630306" time="0" location="/home/hady/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-stm/scala-stm_2.11/0.7/scala-stm_2.11-0.7.jar"/>
 					</artifact>
 				</artifacts>

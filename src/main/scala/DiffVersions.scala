@@ -12,7 +12,7 @@ import akka.util.ByteString
 import scala.concurrent.duration._
 import sys.process._
 
-object Main extends App {
+object diff {
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
 

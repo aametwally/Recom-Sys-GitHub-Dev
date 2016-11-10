@@ -7,7 +7,7 @@ class Main1Test extends FunSuite {
 
 
   test("test hello world") {
-    val x = 3;
+    val x = 2;
     assert(x === 3)
   }
 

@@ -22,7 +22,7 @@ object DatabaseActor extends App {
     implicit val materializer = ActorMaterializer()
     def receive= {
       case repoString: String => {
-        println("Repo string: " +repoString)
+        println("Repo string: " + repoString)
         // change these to fit the project
         val test_java_file_path = repoString
         // make generic (java for now)

@@ -703,9 +703,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.8!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
-[debug] :: resolution report :: resolve 4805ms :: artifacts dl 72ms
-[debug] 	report for homework3#homework3$sbt_2.11;1.0 default produced in /home/hady/Dropbox/UIC/Courses/CS-474-OOP/HW3/ahmed_metwally_samrudhi_nayak_eric_wolfson_hw3/target/resolution-cache/reports/homework3-homework3$sbt_2.11-default.xml
-[debug] 	resolve done (4805ms resolve - 72ms download)
+[debug] :: resolution report :: resolve 526ms :: artifacts dl 27ms
+[debug] 	report for homework3#homework3$sbt_2.11;1.0 default produced in /home/hady/Dropbox/UIC/Courses/CS-474-OOP/HW3/Wednesday6pm/ahmed_metwally_samrudhi_nayak_eric_wolfson_hw3/target/resolution-cache/reports/homework3-homework3$sbt_2.11-default.xml
+[debug] 	resolve done (526ms resolve - 27ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: homework3#homework3$sources_2.11;1.0
 [debug] 	confs: [default]
@@ -1069,6 +1069,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.8!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.8!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.8!precompiled-2_9_3.jar(src)
-[debug] :: resolution report :: resolve 363ms :: artifacts dl 45ms
-[debug] 	report for homework3#homework3$sources_2.11;1.0 default produced in /home/hady/Dropbox/UIC/Courses/CS-474-OOP/HW3/ahmed_metwally_samrudhi_nayak_eric_wolfson_hw3/target/resolution-cache/reports/homework3-homework3$sources_2.11-default.xml
-[debug] 	resolve done (363ms resolve - 45ms download)
+[debug] :: resolution report :: resolve 225ms :: artifacts dl 48ms
+[debug] 	report for homework3#homework3$sources_2.11;1.0 default produced in /home/hady/Dropbox/UIC/Courses/CS-474-OOP/HW3/Wednesday6pm/ahmed_metwally_samrudhi_nayak_eric_wolfson_hw3/target/resolution-cache/reports/homework3-homework3$sources_2.11-default.xml
+[debug] 	resolve done (225ms resolve - 48ms download)
