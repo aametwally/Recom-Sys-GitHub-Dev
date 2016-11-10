@@ -11,7 +11,7 @@ import org.jgrapht.graph._
 
 import com.scitools.understand._
 
-object DatabaseActor extends App {
+object AnalyzerActor {
 
   class ComparisonActor extends Actor {
     implicit val materializer = ActorMaterializer()
@@ -134,19 +134,21 @@ object DatabaseActor extends App {
 
     def displayResults(): Unit =
     {
-      println("Added vertices:")
+      println("Added functions which can be tested:")
       for (i <- added_vertices_array) {
         println("Added vertex: " + i)
       }
-
-      println("Deleted vertices:")
+      println(" ")
+      println("Deleted functions different from previous version:")
       for (i <- deleted_vertices_array) {
         println("Deleted vertex: " + i)
       }
 
-      println("")
-      println("Num added: " + num_added_nodes.toString())
-      println("Num deleted: " + num_deleted_nodes.toString())
+      println("STATS:")
+      println("Number of functions added: " + num_added_nodes.toString())
+      println("Number of functions deleted: " + num_deleted_nodes.toString())
+      println(" ")
+      println(" ")
     }
 
     def analyzeResults(): Unit =

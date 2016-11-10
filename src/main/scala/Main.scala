@@ -1,4 +1,4 @@
-import SimpleActor.ComplexActor
+import DownloaderActor.ClonerActor
 import akka.actor.{ActorSystem, Props}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.HttpRequest
@@ -26,7 +26,7 @@ object Main extends App{
     var searchPath = "https://api.github.com/legacy/repos/search/" + keyword + "?language=" + lang
     println("searchPath=" + searchPath)
       //var searchPath = "https://api.github.com/repos/square/okio"
-  val actors = system.actorOf(Props[ComplexActor], "ComplexActor")
+  val actors = system.actorOf(Props[ClonerActor], "ComplexActor")
     // send akka http request to get list of projects with the specified language and keyword
       val responseFuture = Http().singleRequest(HttpRequest(uri = searchPath))
     import system.dispatcher
@@ -38,20 +38,20 @@ object Main extends App{
       for(m<-p)
       {
         i+=1
-        println(i)
+        //println(i)
         val obj = Json.parse(m)
         var tempstr : String = null
         var username : String = null
         var name : String = null
-        for( a <- 0 to 1){
+        for( a <- 0 to 3){
           username = obj.\("repositories")(a).\("username").toString()
           name = obj.\("repositories")(a).\("name").toString()
           username= username.replace("\"", "");
           name= name.replace("\"", "");
           tempstr="https://api.github.com/repos/"+username+"/"+name
-          println(username)
-          println(name)
-          println("tempStr= " + tempstr)
+          //println(username)
+          //println(name)
+          //println("tempStr= " + tempstr)
           val projectsURL= "https://api.github.com/repos/"+username+"/"+name
           actors ! tempstr
         }
@@ -59,7 +59,7 @@ object Main extends App{
 
       }
 
-      println("finish the first http request")
+     // println("finish the first http request")
 
     val projectsURL = scala.collection.mutable.MutableList[String]()
 
@@ -71,8 +71,8 @@ object Main extends App{
     var j = 0
     for (path <- projectsURL) {
       j += 1
-      println("j= " + j)
-      println("here is the for= " + path)
+      //println("j= " + j)
+      //println("here is the for= " + path)
 
       val responseFuture2 = Http().singleRequest(HttpRequest(uri = path))
       val response2 = Await.result(responseFuture2, Duration.Inf)
@@ -86,19 +86,13 @@ object Main extends App{
         projectsCloneURL += cloneURLtmp
         cloneGitHubStr = "git clone " + cloneURLtmp + " repo_projects/" + projectFullName
 
-        println("cloneURLtmp=" + cloneURLtmp)
-        println("projectFullName=" + projectFullName)
-        println("Clone command = " + cloneGitHubStr)
+//        println("cloneURLtmp=" + cloneURLtmp)
+//        println("projectFullName=" + projectFullName)
+//        println("Clone command = " + cloneGitHubStr)
 
 
         val yy = cloneGitHubStr !
       }
     }
-
-
-    projectsCloneURL.foreach {
-      println
-    }
-    println("finish")
   }
 
