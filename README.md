@@ -75,7 +75,7 @@ sbt "test-only "
 
 To execute the program from command line, use:
 ```
-sbt run Main
+sbt run
 ```
 
 
