@@ -12,6 +12,15 @@ This project is an application which is meant for Linux based machines and aims 
 * Understand® APIs: https://scitools.com/
 * GitHub APIs: https://developer.github.com/v3/
 
+## (Important)
+You must delete the fetched project folders as well as the analysis folder
+between each run of the program (The udb files can just be overwritten)
+
+## Bonus Parts
+* 1) Results are stored in external files
+* 2) Deleted functions (in addition to added functions) are analyzed
+* 3) The called functions in every added and deleted function is listed in a separate    file
+
 ## Inputs:
 
 * The language for your test projects (Example: java)
