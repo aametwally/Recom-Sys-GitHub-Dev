@@ -76,7 +76,7 @@ sbt compile
 
 There are a couple of test cases implemented in this program. These test cases ensure that every method works as expected. You can test them using:
 ```
-sbt "test-only "
+sbt test
 ```
 
 
