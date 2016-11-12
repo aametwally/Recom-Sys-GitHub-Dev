@@ -179,7 +179,7 @@ object AnalyzerActor {
       {
         temp_write_file.write("Added dependency graph vertex: " + i + "\n")
 
-        val add_temp_writer = new PrintWriter(new File("/" + repoString + "Analysis" +"/addedfns/" + i + ".txt"))
+        val add_temp_writer = new PrintWriter(new File(repoString + "/Analysis" +"/addedfns/" + i + ".txt"))
         add_temp_writer.write("Number of called fns in this fn: " + called_functions_in_addedfns_list.get(i).size + "\n")
         if (called_functions_in_addedfns_list.get(i).size == 0)
             add_temp_writer.write("none\n")
@@ -190,14 +190,14 @@ object AnalyzerActor {
         add_temp_writer.close()
       }
 
-      println("\nDeleted functions (in v1 that aren't in v2):\n")
+      temp_write_file.write("\nDeleted functions (in v1 that aren't in v2):\n")
       if (deleted_vertices_array == 0)
         temp_write_file.write("none\n")
       for (i <- deleted_vertices_array)
       {
         temp_write_file.write("Deleted dependency graph vertex: " + i + "\n")
 
-        val del_temp_writer = new PrintWriter(new File("/" + repoString + "Analysis" +"/deletedfns/" + i + ".txt"))
+        val del_temp_writer = new PrintWriter(new File(repoString + "/Analysis" +"/deletedfns/" + i + ".txt"))
         del_temp_writer.write("Number of called fns in this fn: " + called_functions_in_deletedfns_list.size() + "\n")
         if (called_functions_in_deletedfns_list.get(i).size == 0)
             del_temp_writer.write("none\n")
