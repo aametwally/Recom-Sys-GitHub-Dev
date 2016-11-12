@@ -173,7 +173,7 @@ object AnalyzerActor {
       temp_write_file.write("Number of deleted functions " + num_deleted_nodes.toString() + "\n")
 
       temp_write_file.write("\nAdded functions which should be tested:")
-      if (added_vertices_array == 0)
+      if (added_vertices_array.size == 0)
           temp_write_file.write("none\n")
       for (i <- added_vertices_array)
       {
@@ -191,7 +191,7 @@ object AnalyzerActor {
       }
 
       temp_write_file.write("\nDeleted functions (in v1 that aren't in v2):\n")
-      if (deleted_vertices_array == 0)
+      if (deleted_vertices_array.size == 0)
         temp_write_file.write("none\n")
       for (i <- deleted_vertices_array)
       {
