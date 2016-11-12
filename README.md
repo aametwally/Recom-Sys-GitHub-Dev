@@ -5,11 +5,11 @@
   * Samrudhi Nayak (652550698)
   * Eric Wolfson (678795352)
 
-This project is an application which is meant for Linux based machines and aims at making recommendations to GitHub developers based on the differences between two versions of the same application. We use the REST APIs of the akka toolkit as well as the actor pattern to send and receive messages between actors. It also uses gitHub APIs to stream open source applications from GitHub and clone the repositories into our local directories. This project uses UnderstandÂ® (from Scitools) APIs to build dependency graphs for two versions of the applications so that we may compare the versions for differences and use those differences to suggest actions to the developers. You can read about the above mentioned resources through the links given below:
+This project is an application which is meant for Linux based machines and aims at making recommendations to GitHub developers based on the differences between two versions of the same application. We use the REST APIs of the akka toolkit as well as the actor pattern to send and receive messages between actors. It also uses gitHub APIs to stream open source applications from GitHub and clone the repositories into our local directories. This project uses Understand® (from Scitools) APIs to build dependency graphs for two versions of the applications so that we may compare the versions for differences and use those differences to suggest actions to the developers. You can read about the above mentioned resources through the links given below:
 
 * Akka toolkit : http://akka.io
 * Dependency Graph: https://en.wikipedia.org/wiki/Dependency_graph
-* UnderstandÂ® APIs: https://scitools.com/
+* Understand® APIs: https://scitools.com/
 * GitHub APIs: https://developer.github.com/v3/
 
 ## (Important)
@@ -46,7 +46,7 @@ between each run of the program (The udb files can just be overwritten)
 ### Prerequisites
 * JDK 8 and JRE 8 to be installed on the machine.
 * SBT to be installed on the machine.
-* UnderstandÂ® installed on the machine.
+* Understand® installed on the machine.
 
 
 ### Installing, Testing, and Running
@@ -89,8 +89,15 @@ sbt compile
 
 There are a couple of test cases implemented in this program. These test cases ensure that every method works as expected. You can test them using:
 ```
-sbt test
+sbt "test-only UnitTest"
 ```
+
+
+Also, there is one integration test that test the creation of the udb files, dependency graph, and the whole analysis.
+```
+sbt "test-only IntegAnalysisTest"
+```
+
 
 
 To execute the program from command line, use:
