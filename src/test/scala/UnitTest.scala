@@ -14,7 +14,6 @@ class UnitTest extends TestKit(ActorSystem("TestActor")) {
 
   @Test
   def testUDB {
-
     val projectPath : String = "datasets/square"
     val list_of_version_subfolders = actor.createUDBFiles(projectPath)
 
@@ -26,7 +25,6 @@ class UnitTest extends TestKit(ActorSystem("TestActor")) {
   @Test
   def testCreateDep {
     actor.createDepGraphs(Array("okio", "okio_v2"))
-
     println(actor.dg_objs(0).vertexSet().size())
     println(actor.dg_objs(1).vertexSet().size())
     println(actor.dg_objs(0).edgeSet().size())
@@ -39,16 +37,7 @@ class UnitTest extends TestKit(ActorSystem("TestActor")) {
     println("Passed...")
   }
 
-  @Test
-  def testAnalysisIntegration {
-    val x = actor.createUDBFiles("datasets/square")
-    actor.createDepGraphs(Array("okio", "okio_v2"))
-    actor.analyzeResults("datasets/square")
 
-    println(actor.num_added_nodes)
-    println(actor.num_deleted_nodes)
-    assert(actor.num_added_nodes == 184)
-    assert(actor.num_deleted_nodes == 11)
-    println("Passed...")
-  }
+
+
 }
