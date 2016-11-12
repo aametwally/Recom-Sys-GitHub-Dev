@@ -53,7 +53,7 @@ between each run of the program (The udb files can just be overwritten)
 
 Clone the project to your local repository:
 ```
-git clone https://samrudhinayak@bitbucket.org/ametwally/ahmed_metwally_samrudhi_nayak_eric_wolfson_hw3.git
+git clone https://ametwally@bitbucket.org/ametwally/ahmed_metwally_samrudhi_nayak_eric_wolfson_hw3.git
 ```
 
 
