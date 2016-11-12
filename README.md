@@ -128,4 +128,7 @@ The program should then use the keyword and language preferences to clone the re
 * We use GitHub developer APIs to clone two versions of the same application into our local machine.
 * We then use Understand APIs to build the udb files from which to build dependency graphs on a function level.
 * The dependency graphs of the different versions are then compared to obtain the differences between the versions which are given out as a recommendation to the developers so they may test the functions that have been added since the previous version of the application.
-* If more than one project has the keyword that the user provides, the application will create only one analysis directory for the first project that was downloaded. It is just a matter of name confliction. We have the correct code for it, but couldn't test it because we exceeded our limit of HTTP requests.
+* If more than one project has the keyword that the user provides, the application will create only one analysis directory for the first project that was downloaded. It is just a matter of name conflicts. We have the correct code for it, but couldn't test it because we exceeded our limit of HTTP requests.
+
+##Limitation
+Since several of the applications that match the keywords do not have more than one version, our application parses through the first 20 applications that match the keywords/language specifications and clones only the ones which have more than one version of the application.
