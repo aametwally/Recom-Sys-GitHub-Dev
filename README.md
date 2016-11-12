@@ -85,6 +85,12 @@ Then the program should ask you to enter a language of your choice and a keyword
 * Enter the keyword: dna
 ```
 
+There is an error that gets generated for each version of the applications while being cloned
+
+```
+Error: -quiet is an unused argument and ignored.
+```
+ This error occurs since we have used the quiet command so as to not display the details of the creation of the udb files which Understand dumps onto the console while creating it. We used the "quiet" command to ensure that the output on the console is clean.
 
 The program should then use the keyword and language preferences to clone the repositories matching the language and keyword descriptions into the local repository, build dependency graphs and calculate the differences between different versions of the application based on the dependency graphs.  
 
