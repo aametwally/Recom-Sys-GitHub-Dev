@@ -43,7 +43,7 @@ object Main extends App{
         var tempstr : String = null
         var username : String = null
         var name : String = null
-        for( a <- 0 to 3){
+        for( a <- 0 to 20){
           username = obj.\("repositories")(a).\("username").toString()
           name = obj.\("repositories")(a).\("name").toString()
           username= username.replace("\"", "");
