@@ -22,6 +22,10 @@ This project is an application which is meant for Linux based machines and aims 
   -) Two directories are created addedfns and deletedfns in the analysis directory
   -) In each directory is a list of functions that are added (or deleted) in the form
      of text files. In each text file is a list of all functions called by the  function whose name is the file. For instance in functiona.txt, if there is functionz and functionw listed, then functiona calls functionz and functionw.
+* For each project:
+  Under "repo_projects in the project root directory...
+  -) project folders called <name> and <name_v2> are created where "name" is the name of the project. Each folder contains the data for each version (v1 and v2 respectively). The udb files are created in just the homework 3 project root directory. 
+
 
 
 ## Getting Started
