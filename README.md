@@ -1,9 +1,9 @@
 #  Recommending actions to GitHub developers based on changes made between two versions of the application
 
 # Project members
-  *) Ahmed Metwally (678120810)
-  *) Samrudhi Nayak (652550698)
-  *) Eric Wolfson (678795352)
+  * Ahmed Metwally (678120810)
+  * Samrudhi Nayak (652550698)
+  * Eric Wolfson (678795352)
 
 This project is an application which is meant for Linux based machines and aims at making recommendations to GitHub developers based on the differences between two versions of the same application. We use the REST APIs of the akka toolkit as well as the actor pattern to send and receive messages between actors. It also uses gitHub APIs to stream open source applications from GitHub and clone the repositories into our local directories. This project uses Understand® (from Scitools) APIs to build dependency graphs for two versions of the applications so that we may compare the versions for differences and use those differences to suggest actions to the developers. You can read about the above mentioned resources through the links given below:
 
