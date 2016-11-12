@@ -15,10 +15,13 @@ This project is an application which is meant for Linux based machines and aims 
 
 ## Output:
 
-* List of all methods that added to the new version.
-* List of all the methods that removed from the old version.
-
-These methods are the one that should be tested.
+* For each project:
+  Under "repo_projects" in the project root directory...
+  -) A project folder called "analysis" with results is stored in the project name directory
+  -) A list of all added and deleted functions are saved to a file    primaryDependencyGraphDifferences.txt in *that* directory
+  -) Two directories are created addedfns and deletedfns in the analysis directory
+  -) In each directory is a list of functions that are added (or deleted) in the form
+     of text files. In each text file is a list of all functions called by the  function whose name is the file. For instance in functiona.txt, if there is functionz and functionw listed, then functiona calls functionz and functionw.
 
 
 ## Getting Started
